@@ -40,17 +40,21 @@ function GoalInput({onAddGoal, visible, onCancel}) {
         setEnteredGoalText('');
     }
 
-    return (<Modal visible={visible} animationType="slide">
+    return (<
+            Modal visible={visible} animationType="slide">
             <View style={styles.inputContainer}>
-                <Image style={styles.image} source={require('../assets/images/goal.png')} />
+                <Image style={styles.image} source={require('../assets/images/goal.png')}/>
+
                 <TextInput style={styles.textInput} placeholder='Your course goal!' onChangeText={goalInputHandler}
                            value={enteredGoalText}/>
                 <View style={styles.buttonContainer}>
-                    <View style={styles.button}><Button title='Cancel' onPress={onCancel} color="#f31282" /></View>
-                    <View style={styles.button}><Button title='Add Goal' onPress={addGoalHandler} color="#5e0acc"/></View>
+                    <View style={styles.button}><Button title='Cancel' onPress={onCancel} color="#f31282"/></View>
+                    <View style={styles.button}><Button title='Add Goal' onPress={addGoalHandler}
+                                                        color="#5e0acc"/></View>
                 </View>
             </View>
-        </Modal>);
+        </Modal>
+    );
 }
 
 export default GoalInput;
